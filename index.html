@@ -22,7 +22,12 @@
 
             let computerSelection = getComputerChoice();
 
-            let playerSelection= prompt("Rock, Paper, or Scissors?", "");
+            let choice= prompt("Rock, Paper, or Scissors?", "");
+            let choiceFirstLetter= choice.charAt(0);
+            let choiceRemaining= choice.slice(1);
+            let choiceLower= choiceRemaining.toLowerCase();
+            let choiceUpper= choiceFirstLetter.toUpperCase();
+            let playerSelection= choiceUpper.concat(choiceLower);
 
             function playRound(playerSelection, computerSelection){
                 if (playerSelection == computerSelection){

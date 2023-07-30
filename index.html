@@ -7,7 +7,11 @@
     </head>
     <body>
         <script>
-            
+            function getComputerChoice(min, max){
+                return Math.floor(Math.random()* (max- min)+ min);
+            }
+            let rng = getComputerChoice(1,9);
+            console.log(rng); 
         </script>
     </body>
 </html>

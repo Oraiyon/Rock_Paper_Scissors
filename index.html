@@ -7,22 +7,40 @@
     </head>
     <body>
         <script>
-            function getComputerChoice(min, max){
-                let rng = Math.floor(Math.random()* (max- min)+ min);
-                if (rng <= 33){
+
+            function getComputerChoice(){
+                let rng = Math.floor(Math.random()* 3);
+                if (rng == 0){
                     rng = "Rock";  
-                } else if (rng > 33 && rng <= 66){
+                } else if (rng == 1){
                     rng = "Paper";
                 } else {
                     rng = "Scissors";
                 }
-                let result= rng;
-                return result;
+                return rng;
             }
+
+            let computerSelection = getComputerChoice();
+
+            let playerSelection= prompt("Rock, Paper, or Scissors?", "");
+
+            function playRound(playerSelection, computerSelection){
+                if (playerSelection == computerSelection){
+                    return "Tie";
+                } else if (
+                    (playerSelection == "Rock" && computerSelection == "Scissors") ||
+                    (playerSelection == "Paper" && computerSelection == "Rock") ||
+                    (playerSelection == "Scissors" && computerSelection == "Paper")){ 
+                        return `You Win! ${playerSelection} beats ${computerSelection}`;
+                } else (
+                    (playerSelection == "Rock" && computerSelection == "Paper") ||
+                    (playerSelection == "Paper" && computerSelection == "Scissors") ||
+                    (playerSelection == "Scissors" && computerSelection == "Rock"));
+                        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+            }
+
             
-            let computerSelection = getComputerChoice(1,100);
-            console.log(computerSelection);
-            
+
         </script>
     </body>
 </html>

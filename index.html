@@ -10,8 +10,14 @@
             function getComputerChoice(min, max){
                 return Math.floor(Math.random()* (max- min)+ min);
             }
-            let rng = getComputerChoice(1,9);
-            console.log(rng); 
+            let rng = getComputerChoice(1,100);
+            if (rng <= 33){
+                console.log("Rock");  
+            } else if (rng > 33 && rng <= 66){
+                console.log("Scissors");
+            } else {
+                console.log("Paper");
+            }
         </script>
     </body>
 </html>

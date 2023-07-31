@@ -8,48 +8,69 @@
     <body>
         <script>
 
-            function getComputerChoice(){
-                let rng = Math.floor(Math.random()* 3);
-                if (rng == 0){
-                    rng = "Rock";  
-                } else if (rng == 1){
-                    rng = "Paper";
-                } else {
-                    rng = "Scissors";
-                }
-                return rng;
-            }
-            let computerSelection = getComputerChoice();
-            let userInput= prompt("Rock, Paper, or Scissors?", "");
+            let playerScore= 0;
+            let computerScore= 0;
 
-            function format(){
+            function game(){
+                console.log("----------------");
+
+                function getComputerChoice(){
+                    let rng = Math.floor(Math.random()* 3);
+                    if (rng == 0){
+                        rng = "Rock";  
+                    } else if (rng == 1){
+                        rng = "Paper";
+                    } else {
+                        rng = "Scissors";
+                    }   
+                    return rng;
+                }
+
+                let computerSelection= getComputerChoice().toString();
+                let userInput= prompt("Rock, Paper, or Scissors?", "");
                 let firstLetter= userInput.charAt(0);
                 let remaining= userInput.slice(1);
                 let lower= remaining.toLowerCase();
                 let upper= firstLetter.toUpperCase();
                 let playerSelection= upper.concat(lower);
-                return playerSelection;
-            }
-            function game(){
-                 function playRound(playerSelection, computerSelection){
-                    if (playerSelection == computerSelection){
-                        return "It is a Tie!";
-                    } else if (
+                console.log(`You play ${playerSelection}`);
+                console.log(`Computer plays ${computerSelection}`);
+
+                function playRound(playerSelection, computerSelection){
+                    if (
                         (playerSelection == "Rock" && computerSelection == "Scissors") ||
                         (playerSelection == "Paper" && computerSelection == "Rock") ||
                         (playerSelection == "Scissors" && computerSelection == "Paper")){ 
-                            return `You Win! ${playerSelection} beats ${computerSelection}`;
+                           console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+                           return "Win";
                     } else if (
                         (playerSelection == "Rock" && computerSelection == "Paper") ||
                         (playerSelection == "Paper" && computerSelection == "Scissors") ||
                         (playerSelection == "Scissors" && computerSelection == "Rock")){
-                            return `You Lose! ${computerSelection} beats ${playerSelection}`;
+                            console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+                            return "Lose";
+                    } else if (playerSelection == computerSelection){
+                            console.log("It is a Tie!");
+                            return "Tie";
                     } else {
-                        return "Not an accepted answer. Try again";
+                            console.log("Not an accepted answer. Try again");
+                            return "Not Valid"
                     }  
                 }
+                
+                let roundResult= playRound(playerSelection, computerSelection);
+                if (roundResult == "Win"){
+                    console.log(`Player Score = ${++playerScore}. Computer Score = ${computerScore}`);
+                    return playerScore;
+                } else if (roundResult == "Lose"){
+                    console.log(`Player Score = ${playerScore}. Computer Score = ${++computerScore}`);
+                    return computerScore;
+                } else {
+                    console.log(`Player Score = ${playerScore}. Computer Score = ${computerScore}`);
+                    return computerScore, playerScore;
+                }
             }
-            
+
         </script>
     </body>
 </html>

@@ -71,6 +71,19 @@
                 }
             }
 
+            game();
+            game();
+            game();
+            game();
+            game();
+                
+            if (playerScore > computerScore){
+                console.log("Congratulations! You WON the game!");
+            } else if ( playerScore < computerScore){
+                console.log("Sorry, you LOST the game");
+            } else {
+                console.log("The game ended in a TIE!");
+            }
         </script>
     </body>
 </html>

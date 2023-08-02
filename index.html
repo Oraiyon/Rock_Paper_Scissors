@@ -3,11 +3,10 @@
     <head>
         <meta charset ="utf-8">
         <title></title>
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
     </head>
     <body>
         <script>
-
             let playerScore= 0;
             let computerScore= 0;
 
@@ -71,11 +70,12 @@
                 }
             }
 
-            game();
-            game();
-            game();
-            game();
-            game();
+            for (let i = 1; i <= 5; i++){
+                game();
+                if (playerScore == 3 || computerScore == 3){
+                    break;
+                }
+            }
                 
             if (playerScore > computerScore){
                 console.log("Congratulations! You WON the game!");
@@ -85,5 +85,6 @@
                 console.log("The game ended in a TIE!");
             }
         </script>
+        <div id="container"></div>
     </body>
 </html>

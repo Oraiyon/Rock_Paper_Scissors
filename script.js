@@ -81,12 +81,12 @@ function getScores(playerScore, computerScore){
 
 //displays text when a player reaches 5 wins
 function getWinner(playerScore, computerScore){
-    if (playerScore == 5){
+    if (playerScore == 5 && computerScore < 5){
         divResult.innerText="";
         const h1 = document.createElement("h1");
         h1.innerText= `You beat the computer ${playerScore} to ${computerScore}!`;
         divResult.append(h1);
-    } else if (computerScore == 5){
+    } else if (computerScore == 5 && playerScore < 5){
         divResult.innerText="";
         const h1 = document.createElement("h1");
         h1.innerText= `The computer beat you ${computerScore} to ${playerScore}`;

@@ -90,6 +90,16 @@ function getWinner(playerScore, computerScore){
         const h1 = document.createElement("h1");
         h1.innerText= `The computer beat you ${computerScore} to ${playerScore}`;
         divResult.append(h1);
+    } else if (playerScore == 5 && computerScore == 0){
+        divResult.innerText="";
+        const h1 = document.createElement("h1");
+        h1.innerText= "FLAWLESS VICTORY!";
+        divResult.append(h1);
+    } else if (playerScore == 0 && computerScore == 5){
+        divResult.innerText="";
+        const h1 = document.createElement("h1");
+        h1.innerText= "FLAWLESS DEFEAT!";
+        divResult.append(h1);
 //prevents previous messages from displaying even if score is != 5
     } else {
         const h1 = document.createElement("h1");
@@ -97,11 +107,12 @@ function getWinner(playerScore, computerScore){
         divResult.append(h1);
     }
 }
-
+//blocks button when score = 5
 function resetGame(playerScore, computerScore){
     if (playerScore == 5 || computerScore == 5){
         buttonRock.disabled= true;
         buttonPaper.disabled= true;
         buttonScissors.disabled= true;
     }
+    
 }

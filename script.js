@@ -3,9 +3,10 @@ let playerScore= 0;
 let computerScore= 0;
 
 //brings html elements into js
-const buttonRock= document.querySelector("#Rock");
-const buttonPaper= document.querySelector("#Paper");
-const buttonScissors= document.querySelector("#Scissors");
+const buttonRock= document.querySelector(".Rock");
+const buttonPaper= document.querySelector(".Paper");
+const buttonScissors= document.querySelector(".Scissors");
+const buttonReset= document.querySelector(".Reset");
 const divResult= document.querySelector(".result");
 const divPlayScore= document.querySelector(".playScore");
 const divCompScore= document.querySelector(".compScore");
@@ -113,6 +114,9 @@ function resetGame(playerScore, computerScore){
         buttonRock.remove();
         buttonPaper.remove();
         buttonScissors.remove();
+        buttonReset.setAttribute("style", "display: flex;");
+        buttonReset.addEventListener("click", () => {
+            location.reload();
+        });
     }
-    
 }

@@ -46,6 +46,7 @@ function playRound(playerSelection, computerSelection){
         (playerSelection == "Rock" && computerSelection == "Scissors") ||
         (playerSelection == "Paper" && computerSelection == "Rock") ||
         (playerSelection == "Scissors" && computerSelection == "Paper")){
+            divResult.innerText="";
             ++playerScore;
             const p= document.createElement("p");
             p.innerText= `You Won! ${playerSelection} beats ${computerSelection}`;
@@ -54,11 +55,13 @@ function playRound(playerSelection, computerSelection){
         (playerSelection == "Rock" && computerSelection == "Paper") ||
         (playerSelection == "Paper" && computerSelection == "Scissors") ||
         (playerSelection == "Scissors" && computerSelection == "Rock")){
+            divResult.innerText="";
             ++computerScore;
             const p= document.createElement("p");
             p.innerText= `You Lost! ${computerSelection} beats ${playerSelection}`;
             divResult.append(p);
     } else if (playerSelection == computerSelection){
+            divResult.innerText="";
             const p= document.createElement("p");
             p.innerText= `It was a Tie! Both players picked ${playerSelection}`;
             divResult.append(p);
@@ -68,17 +71,19 @@ function playRound(playerSelection, computerSelection){
 
 //shows current scores
 function getScores(playerScore, computerScore){
-    divPlayScore.innerText= `Player Score = ${playerScore}`;
-    divCompScore.innerText= `Computer Score = ${computerScore}`;
+    divPlayScore.innerText= `Player Score: ${playerScore}`;
+    divCompScore.innerText= `Computer Score: ${computerScore}`;
 }
 
 //displays text when a player reaches 5 wins
 function getWinner(playerScore, computerScore){
     if (playerScore == 5){
+        divResult.innerText="";
         const h1 = document.createElement("h1");
         h1.innerText= `You beat the computer ${playerScore} to ${computerScore}!`;
         divResult.append(h1);
     } else if (computerScore == 5){
+        divResult.innerText="";
         const h1 = document.createElement("h1");
         h1.innerText= `The computer beat you ${computerScore} to ${playerScore}`;
         divResult.append(h1);

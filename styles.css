@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.Reset{
+    display: none;
+}
+
 .result{
     flex-direction: column;
 }

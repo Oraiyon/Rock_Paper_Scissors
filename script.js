@@ -110,9 +110,9 @@ function getWinner(playerScore, computerScore){
 //blocks button when score = 5
 function resetGame(playerScore, computerScore){
     if (playerScore == 5 || computerScore == 5){
-        buttonRock.disabled= true;
-        buttonPaper.disabled= true;
-        buttonScissors.disabled= true;
+        buttonRock.remove();
+        buttonPaper.remove();
+        buttonScissors.remove();
     }
     
 }

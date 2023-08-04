@@ -17,6 +17,7 @@ buttonRock.addEventListener("click", () => {
     playRound(playerSelection, computerSelection);
     getScores(playerScore, computerScore);
     getWinner(playerScore, computerScore);
+    resetGame(playerScore, computerScore);
 });
 buttonPaper.addEventListener("click", () => {
     const playerSelection= "Paper";
@@ -24,6 +25,7 @@ buttonPaper.addEventListener("click", () => {
     playRound(playerSelection, computerSelection);
     getScores(playerScore, computerScore);
     getWinner(playerScore, computerScore);
+    resetGame(playerScore, computerScore);
 });
 buttonScissors.addEventListener("click", () => {
     const playerSelection= "Scissors";
@@ -31,6 +33,7 @@ buttonScissors.addEventListener("click", () => {
     playRound(playerSelection, computerSelection);
     getScores(playerScore, computerScore);
     getWinner(playerScore, computerScore);
+    resetGame(playerScore, computerScore);
 });
 
 //gets random computer choice
@@ -92,5 +95,13 @@ function getWinner(playerScore, computerScore){
         const h1 = document.createElement("h1");
         h1.innerText= "";
         divResult.append(h1);
+    }
+}
+
+function resetGame(playerScore, computerScore){
+    if (playerScore == 5 || computerScore == 5){
+        buttonRock.disabled= true;
+        buttonPaper.disabled= true;
+        buttonScissors.disabled= true;
     }
 }

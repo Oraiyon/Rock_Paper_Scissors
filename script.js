@@ -35,15 +35,10 @@ buttonScissors.addEventListener("click", () => {
 
 //gets random computer choice
 function getComputerChoice(){
-    let rng = Math.floor(Math.random()* 3);
-        if (rng == 0){
-            return rng = "Rock";  
-        } else if (rng == 1){
-            return rng = "Paper";
-        } else {
-            return rng = "Scissors";
-        }   
-} 
+    const choices = ["Rock", "Paper", "Scissors"];
+    const choice = choices[Math.floor(Math.random() * choices.length)];
+    return choice;
+}
 
 //determines result of one round
 function playRound(playerSelection, computerSelection){
@@ -54,7 +49,7 @@ function playRound(playerSelection, computerSelection){
             ++playerScore;
             const p= document.createElement("p");
             p.innerText= `You Won! ${playerSelection} beats ${computerSelection}`;
-            divResult.appendChild(p);
+            divResult.append(p);
     } else if (
         (playerSelection == "Rock" && computerSelection == "Paper") ||
         (playerSelection == "Paper" && computerSelection == "Scissors") ||
@@ -62,11 +57,11 @@ function playRound(playerSelection, computerSelection){
             ++computerScore;
             const p= document.createElement("p");
             p.innerText= `You Lost! ${computerSelection} beats ${playerSelection}`;
-            divResult.appendChild(p);
+            divResult.append(p);
     } else if (playerSelection == computerSelection){
             const p= document.createElement("p");
             p.innerText= `It was a Tie! Both players picked ${playerSelection}`;
-            divResult.appendChild(p);
+            divResult.append(p);
     }
     
 }
@@ -82,15 +77,15 @@ function getWinner(playerScore, computerScore){
     if (playerScore == 5){
         const h1 = document.createElement("h1");
         h1.innerText= `You beat the computer ${playerScore} to ${computerScore}!`;
-        divResult.appendChild(h1);
+        divResult.append(h1);
     } else if (computerScore == 5){
         const h1 = document.createElement("h1");
         h1.innerText= `The computer beat you ${computerScore} to ${playerScore}`;
-        divResult.appendChild(h1);
+        divResult.append(h1);
 //prevents previous messages from displaying even if score is != 5
     } else {
         const h1 = document.createElement("h1");
         h1.innerText= "";
-        divResult.appendChild(h1);
+        divResult.append(h1);
     }
 }

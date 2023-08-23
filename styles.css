@@ -2,7 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
     font-size: 1.1rem;
+    color: white;
+    background-color: rgb(32, 32, 32);
+    --primary: rgb(92, 89, 89);
+    --secondary: rgb(230, 19, 19);
 }
 
 .score{
@@ -21,10 +26,19 @@
 
 svg{
     height: 200px;
+    fill: var(--secondary);
+    background-color: var(--primary);
 }
 
 button{
     padding: 20px;
+    background-color: var(--primary);
+    border-radius: 8px;
+    box-shadow: 2px 2px white;
+}
+
+.choices p{
+    background-color: var(--primary);
 }
 
 .Reset{
@@ -33,4 +47,18 @@ button{
 
 .result{
     flex-direction: column;
+}
+
+button:hover,
+button:hover p{
+    background-color: var(--secondary);
+}
+
+button:hover svg{
+    background-color: var(--secondary);
+    fill: var(--primary);
+}
+
+button:hover{
+    box-shadow: 2px 2px black;
 }

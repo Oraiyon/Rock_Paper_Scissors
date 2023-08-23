@@ -3,38 +3,20 @@ let playerScore= 0;
 let computerScore= 0;
 
 //brings html elements into js
-const buttonRock= document.querySelector(".Rock");
-const buttonPaper= document.querySelector(".Paper");
-const buttonScissors= document.querySelector(".Scissors");
+const choices= document.querySelectorAll(".choice");
 const buttonReset= document.querySelector(".Reset");
 const divResult= document.querySelector(".result");
 const divPlayScore= document.querySelector(".playScore");
 const divCompScore= document.querySelector(".compScore");
 
 //makes buttons run necessary functions to play
-buttonRock.addEventListener("click", () => {
-    const playerSelection= "Rock";
-    const computerSelection= getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    getScores(playerScore, computerScore);
-    getWinner(playerScore, computerScore);
-    resetGame(playerScore, computerScore);
-});
-buttonPaper.addEventListener("click", () => {
-    const playerSelection= "Paper";
-    const computerSelection= getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    getScores(playerScore, computerScore);
-    getWinner(playerScore, computerScore);
-    resetGame(playerScore, computerScore);
-});
-buttonScissors.addEventListener("click", () => {
-    const playerSelection= "Scissors";
-    const computerSelection= getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    getScores(playerScore, computerScore);
-    getWinner(playerScore, computerScore);
-    resetGame(playerScore, computerScore);
+choices.forEach(choice => {
+    choice.addEventListener("click", () =>{
+        playRound(choice.innerText, getComputerChoice());
+        getScores(playerScore, computerScore);
+        getWinner(playerScore, computerScore);
+        resetGame(playerScore, computerScore);
+    });
 });
 
 //gets random computer choice
@@ -111,10 +93,10 @@ function getWinner(playerScore, computerScore){
 //blocks button when score = 5
 function resetGame(playerScore, computerScore){
     if (playerScore == 5 || computerScore == 5){
-        buttonRock.remove();
-        buttonPaper.remove();
-        buttonScissors.remove();
-        buttonReset.setAttribute("style", "display: flex;");
+        choices.forEach(choice => {
+            choice.remove();
+        }); 
+        buttonReset.setAttribute("style", "display: block; text-align:center;");
         buttonReset.addEventListener("click", () => {
             location.reload();
         });

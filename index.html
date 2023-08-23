@@ -5,17 +5,32 @@
         <title></title>
         <script src="script.js" defer></script>
         <link rel ="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="score">
             <div class="playScore">Player Score: 0</div>
             <div class="compScore">Computer Score: 0</div>
         </div>
-        <div class="buttons">
-            <button class="Rock">Rock</button>
-            <button class="Paper">Paper</button>
-            <button class="Scissors">Scissors</button>
-            <button class="Reset">Play Again?</button>
+        <div class="choices">
+            <button class="choice">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>diamond-stone</title><path d="M16,9H19L14,16M10,9H14L12,17M5,9H8L10,16M15,4H17L19,7H16M11,4H13L14,7H10M7,4H9L8,7H5M6,2L2,8L12,22L22,8L18,2H6Z" /></svg>
+                <p>Rock</p>
+            </button>
+            <button class="choice">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>paper-roll</title><path d="M9 3C5.69 3 3.14 5.69 3 9V21H12V13.46C13.1 14.45 14.5 15 16 15C19.31 15 22 12.31 22 9C22 5.69 19.31 3 16 3H9M16 5C18.21 5 20 6.79 20 9C20 11.21 18.21 13 16 13C13.79 13 12 11.21 12 9C12 6.79 13.79 5 16 5M16 7.25C15.03 7.25 14.25 8.03 14.25 9C14.25 9.97 15.03 10.75 16 10.75C16.97 10.75 17.75 9.97 17.75 9C17.75 8.03 16.97 7.25 16 7.25M4 12H5V13H4V12M6 12H7V13H6V12M8 12H9V13H8V12M10 12H11V13H10V12Z" /></svg>
+                <p>Paper</p>
+            </button>
+            <button class="choice">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>content-cut</title><path d="M19,3L13,9L15,11L22,4V3M12,12.5A0.5,0.5 0 0,1 11.5,12A0.5,0.5 0 0,1 12,11.5A0.5,0.5 0 0,1 12.5,12A0.5,0.5 0 0,1 12,12.5M6,20A2,2 0 0,1 4,18C4,16.89 4.9,16 6,16A2,2 0 0,1 8,18C8,19.11 7.1,20 6,20M6,8A2,2 0 0,1 4,6C4,4.89 4.9,4 6,4A2,2 0 0,1 8,6C8,7.11 7.1,8 6,8M9.64,7.64C9.87,7.14 10,6.59 10,6A4,4 0 0,0 6,2A4,4 0 0,0 2,6A4,4 0 0,0 6,10C6.59,10 7.14,9.87 7.64,9.64L10,12L7.64,14.36C7.14,14.13 6.59,14 6,14A4,4 0 0,0 2,18A4,4 0 0,0 6,22A4,4 0 0,0 10,18C10,17.41 9.87,16.86 9.64,16.36L12,14L19,21H22V20L9.64,7.64Z" /></svg>
+                <p>Scissors</p>
+            </button>
+            <button class="Reset">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>replay</title><path d="M12,5V1L7,6L12,11V7A6,6 0 0,1 18,13A6,6 0 0,1 12,19A6,6 0 0,1 6,13H4A8,8 0 0,0 12,21A8,8 0 0,0 20,13A8,8 0 0,0 12,5Z" /></svg>
+                <p>Play Again?</p>
+            </button>
         </div>
         <div class="result"></div>
     </body>
